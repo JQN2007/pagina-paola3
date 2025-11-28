@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones Juveniles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌟 Recomendaciones Sobre Mar Del Plata 🌟</h1>
+        <p class="subtitulo">Compartí lugares increíbles para turistas y nuevos residentes</p>
+    </header>
+
+    <main>
+
+        <section class="form-card">
+            <h2>➕ Agregar un lugar recomendado</h2>
+
+            <form id="formLugar">
+
+                <input type="text" name="nombre" placeholder="Nombre del lugar" required>
+
+                <select name="categoria" required>
+                    <option value="">Seleccionar categoría</option>
+                    <option value="Café">☕ Café</option>
+                    <option value="Parque">🌳 Parque</option>
+                    <option value="Mirador">🌄 Mirador</option>
+                    <option value="Museo">🏛 Museo</option>
+                    <option value="Plaza">🏞 Plaza</option>
+                </select>
+
+                <textarea name="descripcion" placeholder="Descripción del lugar" required></textarea>
+
+                <button type="submit">Agregar recomendación</button>
+
+            </form>
+            <p id="mensaje"></p>
+        </section>
+
+        <h2 class="titulo-lista">📍 Lugares recomendados por jóvenes</h2>
+
+        <section id="listaLugares" class="grid"></section>
+
+    </main>
+
+<script src="app.js"></script>
+</body>
+</html>
