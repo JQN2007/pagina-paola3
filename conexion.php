@@ -1,13 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "recomendaciones_db";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "recomendaciones_db";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
+
 
 ?>

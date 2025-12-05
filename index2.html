@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style2.css">
+    <title>Lugares recomendados - Mar del Plata</title>
+</head>
+<body>
+
+<header>
+    <h1>Lugares recomendados en Mar del Plata</h1>
+    <p>Contribuidos por jóvenes de la ciudad</p>
+</header>
+
+<div class="grid" id="lista"></div>
+
+<div class="volver">
+    <a href="index.html">Agregar otra recomendación</a>
+</div>
+
+<script>
+    fetch("obtener_lugares.php")
+        .then(res => res.json())
+        .then(data => {
+            const cont = document.getElementById("lista");
+            data.forEach(lugar => {
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "card";
+
+                tarjeta.innerHTML = `
+                    <h3>${lugar.nombre}</h3>
+                    <div class="categoria">${lugar.categoria}</div>
+                    <p>${lugar.comentario}</p>
+                `;
+
+                cont.appendChild(tarjeta);
+            });
+        })
+        .catch(err => {
+            console.error("Error al cargar lugares:", err);
+        });
+</script>
+
+</body>
+</html>

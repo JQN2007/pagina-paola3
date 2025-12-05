@@ -2,49 +2,35 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendaciones Juveniles</title>
     <link rel="stylesheet" href="style.css">
+    <title>Agregar recomendación - Mar del Plata</title>
 </head>
 <body>
 
-    <header>
-        <h1>🌟 Recomendaciones Sobre Mar Del Plata 🌟</h1>
-        <p class="subtitulo">Compartí lugares increíbles para turistas y nuevos residentes</p>
-    </header>
+<div class="form-container">
+    <h2>Recomendá un lugar de Mar del Plata</h2>
 
-    <main>
+    <form action="agregar_lugar.php" method="POST">
+        <label for="nombre">Nombre del lugar</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-        <section class="form-card">
-            <h2>➕ Agregar un lugar recomendado</h2>
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria" required>
+            <option value="Playa">Playa</option>
+            <option value="Centro">Centro</option>
+            <option value="Plaza">Plaza</option>
+            <option value="Museo">Museo</option>
+            <option value="Mirador">Mirador</option>
+            <option value="Café">Café</option>
+            <option value="Otro">Otro</option>
+        </select>
 
-            <form id="formLugar">
+        <label for="comentario">Comentario</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
 
-                <input type="text" name="nombre" placeholder="Nombre del lugar" required>
+        <button type="submit">Guardar recomendación</button>
+    </form>
+</div>
 
-                <select name="categoria" required>
-                    <option value="">Seleccionar categoría</option>
-                    <option value="Café">☕ Café</option>
-                    <option value="Parque">🌳 Parque</option>
-                    <option value="Mirador">🌄 Mirador</option>
-                    <option value="Museo">🏛 Museo</option>
-                    <option value="Plaza">🏞 Plaza</option>
-                </select>
-
-                <textarea name="descripcion" placeholder="Descripción del lugar" required></textarea>
-
-                <button type="submit">Agregar recomendación</button>
-
-            </form>
-            <p id="mensaje"></p>
-        </section>
-
-        <h2 class="titulo-lista">📍 Lugares recomendados por jóvenes</h2>
-
-        <section id="listaLugares" class="grid"></section>
-
-    </main>
-
-<script src="app.js"></script>
 </body>
 </html>

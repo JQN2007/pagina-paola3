@@ -1,18 +1,16 @@
 <?php
 include("conexion.php");
 
-$nombre = $_POST['nombre'];
-$descripcion = $_POST['descripcion'];
-$categoria = $_POST['categoria'];
+$nombre = $_POST["nombre"];
+$categoria = $_POST["categoria"];
+$comentario = $_POST["comentario"];
 
-$sql = "INSERT INTO lugares (nombre, descripcion, categoria)
-        VALUES ('$nombre', '$descripcion', '$categoria')";
+$sql = "INSERT INTO lugares (nombre, categoria, comentario) VALUES ('$nombre', '$categoria', '$comentario')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "OK";
+if ($conn->query($sql)) {
+    header("Location: index2.html");
+    exit;
 } else {
-    echo "ERROR: " . $conn->error;
+    echo "Error al guardar.";
 }
-
-$conn->close();
 ?>
